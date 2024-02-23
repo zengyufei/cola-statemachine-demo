@@ -1,4 +1,4 @@
-package com.zyf.cola.statemachine.demo.audit;
+package com.zyf.cola.statemachine.demo.audit.machine;
 
 import com.alibaba.cola.statemachine.Action;
 import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;

@@ -1,6 +1,9 @@
-package com.zyf.cola.statemachine.demo.audit.machine;
+package com.zyf.cola.statemachine.demo.audit;
 
-import com.zyf.cola.statemachine.demo.audit.AuditDao;
+import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
+import com.zyf.cola.statemachine.demo.audit.machine.AuditEvent;
+import com.zyf.cola.statemachine.demo.audit.machine.AuditState;
+import com.zyf.cola.statemachine.demo.audit.machine.MachineEnum;
 import com.zyf.cola.statemachine.demo.pojo.AuditDTO;
 import com.zyf.cola.statemachine.util.StateMachineEngine;
 import lombok.extern.slf4j.Slf4j;
@@ -20,11 +23,11 @@ public class AuditServiceImpl implements AuditService {
     @Override
     public void audit(AuditContext auditContext) {
         Long id = auditContext.getId();
-        AuditDTO auditDTO = auditDao.selectById(id);
-        String auditState = auditDTO.getAuditState();
+        AuditDTO old = auditDao.selectById(id);
+        String oldState = old.getAuditState();
         Integer auditEvent = auditContext.getAuditEvent();
         // 获取当前状态和事件
-        AuditState nowState = AuditState.getEnumsByCode(auditState);
+        AuditState nowState = AuditState.getEnumsByCode(oldState);
         AuditEvent nowEvent = AuditEvent.getEnumsByCode(auditEvent);
         // 执行状态机
         stateMachineEngine.fire(MachineEnum.TEST_MACHINE, nowState, nowEvent, auditContext);

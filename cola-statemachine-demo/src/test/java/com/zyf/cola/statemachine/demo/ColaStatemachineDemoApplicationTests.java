@@ -2,7 +2,7 @@ package com.zyf.cola.statemachine.demo;
 
 import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
 import com.zyf.cola.statemachine.demo.pojo.AuditParam;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditService;
+import com.zyf.cola.statemachine.demo.audit.AuditService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,9 @@ class ColaStatemachineDemoApplicationTests {
         auditParam.setAuditEvent(0);
 
         AuditContext auditContext = new AuditContext();
+        auditContext.setId(1L);
+        auditContext.setAuditEvent(0);
+
         BeanUtils.copyProperties(auditParam, auditContext);
         auditService.audit(auditContext);
     }

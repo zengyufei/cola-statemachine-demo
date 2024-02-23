@@ -1,9 +1,7 @@
-package com.zyf.cola.statemachine.demo.audit;
+package com.zyf.cola.statemachine.demo.audit.machine;
 
 import com.alibaba.cola.statemachine.Action;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditEvent;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditState;
+import com.zyf.cola.statemachine.demo.audit.AuditDao;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

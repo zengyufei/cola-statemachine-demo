@@ -1,7 +1,6 @@
 package com.zyf.cola.statemachine.demo.audit;
 
 import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditService;
 import com.zyf.cola.statemachine.demo.pojo.AuditParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;

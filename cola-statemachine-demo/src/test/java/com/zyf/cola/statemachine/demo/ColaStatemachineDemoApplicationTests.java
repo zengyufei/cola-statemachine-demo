@@ -22,26 +22,19 @@ class ColaStatemachineDemoApplicationTests {
 
     @Test
     public void babaPass() {
-        AuditParam auditParam = new AuditParam();
-        auditParam.setId(1L);
-        auditParam.setAuditEvent(0);
-
         AuditContext auditContext = new AuditContext();
         auditContext.setId(1L);
         auditContext.setAuditEvent(0);
 
-        BeanUtils.copyProperties(auditParam, auditContext);
         auditService.audit(auditContext);
     }
 
     @Test
     public void mamaPass() {
-        AuditParam auditParam = new AuditParam();
-        auditParam.setId(2L);
-        auditParam.setAuditEvent(0);
-
         AuditContext auditContext = new AuditContext();
-        BeanUtils.copyProperties(auditParam, auditContext);
+        auditContext.setId(2L);
+        auditContext.setAuditEvent(0);
+
         auditService.audit(auditContext);
     }
 

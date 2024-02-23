@@ -150,15 +150,10 @@ class ColaStatemachineDemoApplicationTests {
 
     @Test
     public void babaPass() {
-        AuditParam auditParam = new AuditParam();
-        auditParam.setId(1L);
-        auditParam.setAuditEvent(0);
-
         AuditContext auditContext = new AuditContext();
         auditContext.setId(1L);
         auditContext.setAuditEvent(0);
 
-        BeanUtils.copyProperties(auditParam, auditContext);
         auditService.audit(auditContext);
     }
   // 打印的日志： 2024-02-23T11:55:02.019+08:00  INFO 11520 --- [           main] c.z.c.s.demo.audit.ActionServiceImpl     : passOrRejectAction from APPLY, to DAD_PASS, on event PASS, id:1

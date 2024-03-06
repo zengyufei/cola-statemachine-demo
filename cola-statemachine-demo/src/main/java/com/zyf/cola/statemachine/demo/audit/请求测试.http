@@ -1,0 +1,32 @@
+###
+POST http://localhost:8080/test/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": 1,
+  "auditEvent": 0
+}
+###
+POST http://localhost:8080/test/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": 1,
+  "auditEvent": 0
+}
+###
+POST http://localhost:8080/test/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": 1,
+  "auditEvent": 0
+}
+###
+POST http://localhost:8080/test/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": 1,
+  "auditEvent": 2
+}

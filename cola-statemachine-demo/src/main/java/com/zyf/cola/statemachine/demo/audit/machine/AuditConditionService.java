@@ -2,7 +2,7 @@ package com.zyf.cola.statemachine.demo.audit.machine;
 
 import com.alibaba.cola.statemachine.Condition;
 
-public interface ConditionService {
+public interface AuditConditionService {
 
     /**
      * 通用通过/驳回条件

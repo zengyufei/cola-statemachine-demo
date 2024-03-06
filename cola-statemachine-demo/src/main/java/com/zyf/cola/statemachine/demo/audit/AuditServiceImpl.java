@@ -21,7 +21,7 @@ public class AuditServiceImpl implements AuditService {
     private StateMachineEngine stateMachineEngine;
 
     @Override
-    public void audit(AuditContext auditContext) {
+    public boolean audit(AuditContext auditContext) {
         Long id = auditContext.getId();
         Integer auditEvent = auditContext.getAuditEvent();
 
@@ -31,7 +31,14 @@ public class AuditServiceImpl implements AuditService {
         AuditState nowState = AuditState.getEnumsByCode(oldState);
         AuditEvent nowEvent = AuditEvent.getEnumsByCode(auditEvent);
         // 执行状态机
-        stateMachineEngine.fire(MachineEnum.TEST_MACHINE, nowState, nowEvent, auditContext);
+        final AuditState newState = stateMachineEngine.fire(MachineEnum.TEST_MACHINE, nowState, nowEvent, auditContext);
+        if (nowState == newState) {
+            log.info("审核失败!");
+            return false;
+        } else {
+            log.info("审核成功!");
+            return true;
+        }
     }
 
     @Override

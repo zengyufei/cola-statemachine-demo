@@ -22,7 +22,7 @@ public enum AuditEvent {
     /**
      * 已完成
      */
-    DONE(2, "已完成");
+    DONE(2, "最终敲板");
 
     /**
      * code

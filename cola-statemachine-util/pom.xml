@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.alibaba.cola</groupId>
             <artifactId>cola-component-statemachine</artifactId>
-            <version>4.1.0</version>
+            <version>4.3.2</version>
         </dependency>
         <!--hutool bom 工具类-->
         <dependency>

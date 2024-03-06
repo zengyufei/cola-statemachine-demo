@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class ActionServiceImpl implements ActionService {
+public class AuditActionServiceImpl implements AuditActionService {
 
     @Autowired
     private AuditDao auditDao;
@@ -16,7 +16,7 @@ public class ActionServiceImpl implements ActionService {
     @Override
     public Action<AuditState, AuditEvent, AuditContext> passOrRejectAction() {
         return (from, to, event, context) -> {
-            log.info("passOrRejectAction from {}, to {}, on event {}, id:{}", from, to, event, context.getId());
+            log.info("通过或拒绝动作 从 [{}] 状态, 变更为 [{}], 因为 [{}] 事件, id: [{}]", from.getDesc(), to.getDesc(), event.getDesc(), context.getId());
             auditDao.updateAuditStatus(to.getCode(), context.getId());
         };
     }
@@ -24,7 +24,7 @@ public class ActionServiceImpl implements ActionService {
     @Override
     public Action<AuditState, AuditEvent, AuditContext> doneAction() {
         return (from, to, event, context) -> {
-            log.info("doneAction from {}, to {}, on event {}, id:{}", from, to, event, context.getId());
+            log.info("完成动作 从 [{}] 状态, 变更为 [{}], 因为 [{}] 事件, id: [{}]", from.getDesc(), to.getDesc(), event.getDesc(), context.getId());
             auditDao.updateAuditStatus(to.getCode(), context.getId());
         };
     }

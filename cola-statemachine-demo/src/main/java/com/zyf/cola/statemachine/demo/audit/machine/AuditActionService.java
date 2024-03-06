@@ -1,11 +1,8 @@
 package com.zyf.cola.statemachine.demo.audit.machine;
 
 import com.alibaba.cola.statemachine.Action;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditEvent;
-import com.zyf.cola.statemachine.demo.audit.machine.AuditState;
 
-public interface ActionService {
+public interface AuditActionService {
 
     /**
      * 通用审核通过/驳回执行动作

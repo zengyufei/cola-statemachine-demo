@@ -156,6 +156,6 @@ class ColaStatemachineDemoApplicationTests {
 
         auditService.audit(auditContext);
     }
-  // 打印的日志： 2024-02-23T11:55:02.019+08:00  INFO 11520 --- [           main] c.z.c.s.demo.audit.ActionServiceImpl     : passOrRejectAction from APPLY, to DAD_PASS, on event PASS, id:1
+  // 打印的日志： 2024-02-23T11:55:02.019+08:00  INFO 11520 --- [           main] c.z.c.s.demo.audit.AuditActionServiceImpl     : passOrRejectAction from APPLY, to DAD_PASS, on event PASS, id:1
 }
 ```

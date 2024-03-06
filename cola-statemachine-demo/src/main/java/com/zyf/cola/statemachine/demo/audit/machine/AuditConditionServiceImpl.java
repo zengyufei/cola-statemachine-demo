@@ -4,7 +4,7 @@ import com.alibaba.cola.statemachine.Condition;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConditionServiceImpl implements ConditionService {
+public class AuditConditionServiceImpl implements AuditConditionService {
     @Override
     public Condition<AuditContext> passOrRejectCondition() {
         return context -> {

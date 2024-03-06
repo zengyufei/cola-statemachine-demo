@@ -31,7 +31,7 @@ public class AuditDaoImpl implements AuditDao {
     public void updateAuditStatus(String code, Long id) {
         final AuditDTO dto = map.get(id);
         if (dto != null) {
-            dto.setCode(code);
+            dto.setAuditState(code);
         }
     }
 

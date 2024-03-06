@@ -8,7 +8,8 @@ public class ConditionServiceImpl implements ConditionService {
     @Override
     public Condition<AuditContext> passOrRejectCondition() {
         return context -> {
-            System.out.println(1);
+            AuditEvent nowEvent = AuditEvent.getEnumsByCode(context.getAuditEvent());
+            System.out.println(nowEvent.getDesc());
             return true;
         };
     }
@@ -16,7 +17,8 @@ public class ConditionServiceImpl implements ConditionService {
     @Override
     public Condition<AuditContext> doneCondition() {
         return context -> {
-            System.out.println(1);
+            AuditEvent nowEvent = AuditEvent.getEnumsByCode(context.getAuditEvent());
+            System.out.println(nowEvent.getDesc());
             return true;
         };
     }

@@ -23,9 +23,10 @@ public class AuditServiceImpl implements AuditService {
     @Override
     public void audit(AuditContext auditContext) {
         Long id = auditContext.getId();
+        Integer auditEvent = auditContext.getAuditEvent();
+
         AuditDTO old = auditDao.selectById(id);
         String oldState = old.getAuditState();
-        Integer auditEvent = auditContext.getAuditEvent();
         // 获取当前状态和事件
         AuditState nowState = AuditState.getEnumsByCode(oldState);
         AuditEvent nowEvent = AuditEvent.getEnumsByCode(auditEvent);

@@ -1,4 +1,4 @@
-package com.zyf.cola.statemachine.demo.audit.machine;
+package com.zyf.cola.statemachine.demo.base.machine;
 
 import com.zyf.cola.statemachine.util.StateMachineEnum;
 import lombok.AllArgsConstructor;

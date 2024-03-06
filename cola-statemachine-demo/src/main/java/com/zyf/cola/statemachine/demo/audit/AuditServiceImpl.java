@@ -3,7 +3,7 @@ package com.zyf.cola.statemachine.demo.audit;
 import com.zyf.cola.statemachine.demo.audit.machine.AuditContext;
 import com.zyf.cola.statemachine.demo.audit.machine.AuditEvent;
 import com.zyf.cola.statemachine.demo.audit.machine.AuditState;
-import com.zyf.cola.statemachine.demo.audit.machine.MachineEnum;
+import com.zyf.cola.statemachine.demo.base.machine.MachineEnum;
 import com.zyf.cola.statemachine.demo.pojo.AuditDTO;
 import com.zyf.cola.statemachine.util.StateMachineEngine;
 import lombok.extern.slf4j.Slf4j;

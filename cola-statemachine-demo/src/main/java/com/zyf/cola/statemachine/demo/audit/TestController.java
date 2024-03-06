@@ -19,7 +19,8 @@ public class TestController {
     @PostMapping("/audit")
     public void audit(@RequestBody @Validated AuditParam auditParam) {
         AuditContext auditContext = new AuditContext();
-        BeanUtils.copyProperties(auditParam, auditContext);
+        auditContext.setId(auditParam.getId());
+        auditContext.setAuditEvent(auditParam.getAuditEvent());
         auditService.audit(auditContext);
     }
 

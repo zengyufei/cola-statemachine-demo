@@ -1,6 +1,7 @@
-package com.zyf.cola.statemachine.demo.audit.machine;
+package com.zyf.cola.statemachine.demo.base.machine;
 
 import com.alibaba.cola.statemachine.builder.StateMachineBuilder;
+import com.zyf.cola.statemachine.demo.audit.machine.*;
 import com.zyf.cola.statemachine.util.StateMachineStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

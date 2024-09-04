@@ -125,10 +125,10 @@ public class AuditServiceImpl implements AuditService {
         Long id = auditContext.getId();
         AuditDTO old = auditDao.selectById(id);
         String oldState = old.getAuditState();
-        Integer auditEvent = auditContext.getAuditEvent();
+        Integer userAuditEvent = auditContext.getAuditEvent();
         // 获取当前状态和事件
         AuditState nowState = AuditState.getEnumsByCode(oldState);
-        AuditEvent nowEvent = AuditEvent.getEnumsByCode(auditEvent);
+        AuditEvent nowEvent = AuditEvent.getEnumsByCode(userAuditEvent);
         // 执行状态机
         stateMachineEngine.fire(MachineEnum.TEST_MACHINE, nowState, nowEvent, auditContext);
     }
@@ -156,6 +156,6 @@ class ColaStatemachineDemoApplicationTests {
 
         auditService.audit(auditContext);
     }
-  // 打印的日志： 2024-02-23T11:55:02.019+08:00  INFO 11520 --- [           main] c.z.c.s.demo.audit.AuditActionServiceImpl     : passOrRejectAction from APPLY, to DAD_PASS, on event PASS, id:1
+  // 打印的日志： 2024-02-23T11:55:02.019+08:00  INFO 11520 --- [           main] c.z.c.s.demo.audit.MachineActionServiceImpl     : passOrRejectAction from APPLY, to DAD_PASS, on event PASS, id:1
 }
 ```

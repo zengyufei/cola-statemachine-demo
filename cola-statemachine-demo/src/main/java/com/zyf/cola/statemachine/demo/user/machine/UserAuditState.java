@@ -1,4 +1,4 @@
-package com.zyf.cola.statemachine.demo.audit.machine;
+package com.zyf.cola.statemachine.demo.user.machine;
 
 import lombok.Getter;
 
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Getter
-public enum AuditState {
+public enum UserAuditState {
 
     /**
      * 已申请
@@ -34,15 +34,15 @@ public enum AuditState {
      */
     DONE("DONE", "已完成");
 
-    private static final Map<String, AuditState> CODE_MAP = new ConcurrentHashMap<>();
+    private static final Map<String, UserAuditState> CODE_MAP = new ConcurrentHashMap<>();
 
     static {
-        for (AuditState auditState : EnumSet.allOf(AuditState.class)) {
-            CODE_MAP.put(auditState.getCode(), auditState);
+        for (UserAuditState userAuditState : EnumSet.allOf(UserAuditState.class)) {
+            CODE_MAP.put(userAuditState.getCode(), userAuditState);
         }
     }
 
-    public static AuditState getEnumsByCode(String code) {
+    public static UserAuditState getEnumsByCode(String code) {
         return CODE_MAP.get(code);
     }
 
@@ -56,7 +56,7 @@ public enum AuditState {
      */
     private String desc;
 
-    AuditState(String code, String desc) {
+    UserAuditState(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

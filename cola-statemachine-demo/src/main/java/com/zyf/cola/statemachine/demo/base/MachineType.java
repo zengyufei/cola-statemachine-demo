@@ -1,4 +1,4 @@
-package com.zyf.cola.statemachine.demo.base.machine;
+package com.zyf.cola.statemachine.demo.base;
 
 import com.zyf.cola.statemachine.util.StateMachineEnum;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum MachineEnum implements StateMachineEnum {
+public enum MachineType implements StateMachineEnum {
 
     /**
      * 测试状态机
@@ -16,12 +16,12 @@ public enum MachineEnum implements StateMachineEnum {
     /**
      * code
      */
-    private String code;
+    private final String code;
 
     /**
      * desc
      */
-    private String desc;
+    private final String desc;
 
     @Override
     public String getCode() {

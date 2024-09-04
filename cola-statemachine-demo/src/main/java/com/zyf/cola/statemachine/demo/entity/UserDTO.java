@@ -1,9 +1,9 @@
-package com.zyf.cola.statemachine.demo.pojo;
+package com.zyf.cola.statemachine.demo.entity;
 
 import lombok.Data;
 
 @Data
-public class AuditDTO {
+public class UserDTO {
     String code;
     String auditState;
 }

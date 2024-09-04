@@ -1,0 +1,9 @@
+###
+POST http://localhost:8080/test/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "userId": "2",
+  "userName": "爸爸",
+  "userAuditEvent": "2"
+}

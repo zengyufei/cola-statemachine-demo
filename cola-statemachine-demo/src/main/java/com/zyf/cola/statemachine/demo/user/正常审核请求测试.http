@@ -3,30 +3,25 @@ POST http://localhost:8080/test/audit
 Content-Type: application/json;charset=UTF-8
 
 {
-  "id": 1,
-  "auditEvent": 0
+  "userId": "1",
+  "userName": "爸爸",
+  "userAuditEvent": "0"
 }
 ###
 POST http://localhost:8080/test/audit
 Content-Type: application/json;charset=UTF-8
 
 {
-  "id": 1,
-  "auditEvent": 0
+  "userId": "1",
+  "userName": "妈妈",
+  "userAuditEvent": "0"
 }
 ###
 POST http://localhost:8080/test/audit
 Content-Type: application/json;charset=UTF-8
 
 {
-  "id": 1,
-  "auditEvent": 0
-}
-###
-POST http://localhost:8080/test/audit
-Content-Type: application/json;charset=UTF-8
-
-{
-  "id": 1,
-  "auditEvent": 2
+  "userId": "1",
+  "userName": "妈妈",
+  "userAuditEvent": "2"
 }

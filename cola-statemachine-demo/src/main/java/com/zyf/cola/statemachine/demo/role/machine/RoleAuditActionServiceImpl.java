@@ -1,8 +1,8 @@
-package com.zyf.cola.statemachine.demo.user.machine;
+package com.zyf.cola.statemachine.demo.role.machine;
 
 import com.alibaba.cola.statemachine.Action;
-import com.zyf.cola.statemachine.demo.user.dao.UserDao;
-import com.zyf.cola.statemachine.demo.params.UserParam;
+import com.zyf.cola.statemachine.demo.role.dao.RoleDao;
+import com.zyf.cola.statemachine.demo.role.params.RoleParam;
 import com.zyf.cola.statemachine.service.MachineActionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +10,19 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class UserAuditActionServiceImpl implements MachineActionService<UserAuditState, UserAuditEvent, UserParam> {
+public class RoleAuditActionServiceImpl implements MachineActionService<RoleAuditState, RoleAuditEvent, RoleParam> {
 
     @Autowired
-    private UserDao userDao;
+    private RoleDao roleDao;
 
     @Override
-    public Action<UserAuditState, UserAuditEvent, UserParam> action() {
+    public Action<RoleAuditState, RoleAuditEvent, RoleParam> action() {
         return (from, to, event, context) -> {
+            // 打开异常测试
+//            final RoleAuditState roleAuditState = RoleAuditState.getEnumsByCode(to.getCode());
+//            if (roleAuditState == RoleAuditState.BZ_PASS) {
+//                int i = 1 / 0;
+//            }
             StringBuilder sb = new StringBuilder();
             final String id = context.getId();
             sb.append("id: [").append(id).append("] ");
@@ -28,11 +33,11 @@ public class UserAuditActionServiceImpl implements MachineActionService<UserAudi
             sb.append(" -> ");
             final String toDesc = to.getDesc();
             sb.append("[").append(toDesc).append("]");
-            if (UserAuditEvent.DONE.equals(event)) {
+            if (RoleAuditEvent.DONE_PASS.equals(event)) {
                 sb.append(" 最终完成全部审核!");
             }
             log.info(sb.toString());
-            userDao.updateAuditStatus(to.getCode(), id);
+            roleDao.updateAuditStatus(to.getCode(), id);
         };
     }
 }

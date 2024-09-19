@@ -20,7 +20,7 @@ public class UserMachine extends StateMachineStrategy<UserAuditState, UserAuditE
 
     @Override
     public String getMachineType() {
-        return MachineType.TEST_MACHINE.getCode();
+        return MachineType.USER_MACHINE.getCode();
     }
 
     /**

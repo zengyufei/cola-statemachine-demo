@@ -1,0 +1,27 @@
+###
+POST http://localhost:8080/role/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "3",
+  "name": "帮众C",
+  "auditEvent": "0"
+}
+###
+POST http://localhost:8080/role/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "3",
+  "name": "帮众C",
+  "auditEvent": "1"
+}
+###
+POST http://localhost:8080/role/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "3",
+  "name": "帮众C",
+  "auditEvent": "2"
+}

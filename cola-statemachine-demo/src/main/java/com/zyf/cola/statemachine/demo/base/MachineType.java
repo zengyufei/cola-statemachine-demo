@@ -9,9 +9,16 @@ import lombok.Getter;
 public enum MachineType implements StateMachineEnum {
 
     /**
-     * 测试状态机
+     * 测试 user 状态机
      */
-    TEST_MACHINE("testMachine", "测试状态机");
+    USER_MACHINE("userMachine", "测试 user 状态机"),
+
+    /**
+     * 测试 role 状态机
+     */
+    ROLE_MACHINE("roleMachine", "测试 role 状态机"),
+
+    ;
 
     /**
      * code

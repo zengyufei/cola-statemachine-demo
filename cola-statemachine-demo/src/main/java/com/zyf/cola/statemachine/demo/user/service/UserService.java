@@ -1,4 +1,4 @@
-package com.zyf.cola.statemachine.demo.user;
+package com.zyf.cola.statemachine.demo.user.service;
 
 
 import com.zyf.cola.statemachine.demo.params.UserParam;

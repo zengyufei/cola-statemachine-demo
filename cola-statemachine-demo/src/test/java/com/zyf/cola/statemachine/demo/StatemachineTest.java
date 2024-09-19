@@ -1,6 +1,6 @@
 package com.zyf.cola.statemachine.demo;
 
-import com.zyf.cola.statemachine.demo.user.UserService;
+import com.zyf.cola.statemachine.demo.user.service.UserService;
 import com.zyf.cola.statemachine.demo.user.machine.UserAuditEvent;
 import com.zyf.cola.statemachine.demo.params.UserParam;
 import org.junit.jupiter.api.Test;

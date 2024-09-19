@@ -1,0 +1,9 @@
+###
+POST http://localhost:8080/role/audit
+Content-Type: application/json;charset=UTF-8
+
+{
+  "id": "2",
+  "name": "帮众B",
+  "auditEvent": "0"
+}
